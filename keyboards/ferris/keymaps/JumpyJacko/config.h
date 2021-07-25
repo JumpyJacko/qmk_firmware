@@ -74,6 +74,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NKRO_ENABLE
 #define FORCE_NKRO
 
+#define COMBO_COUNT 4
 #define COMBO_ALLOW_ACTION_KEYS 
 #define COMBO_VARIABLE_LEN
 #define COMBO_PERMISSIVE_HOLD
