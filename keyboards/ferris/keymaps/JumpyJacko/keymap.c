@@ -9,7 +9,7 @@
  * Basically not even what it was like when it was generated.   
  */
 
-/* Defining Homerow Mods for Readability */
+/* Defining Homerow Mods for Readability (COLEMAK DH) */
 #define HOME_A LGUI_T(KC_A)
 #define HOME_R LALT_T(KC_R)
 #define HOME_S LSFT_T(KC_S)
@@ -20,9 +20,21 @@
 #define HOME_I RALT_T(KC_I)
 #define HOME_O RGUI_T(KC_O)
 
+/* Defining Homerow Mods for Readability (QWERTY) */
+#define HOME_QA    LGUI_T(KC_A)
+#define HOME_QS    LALT_T(KC_S)
+#define HOME_QD    LSFT_T(KC_D)
+#define HOME_QF    LCTL_T(KC_F)
+
+#define HOME_QJ    RCTL_T(KC_J)
+#define HOME_QK    RSFT_T(KC_K)
+#define HOME_QL    RALT_T(KC_L)
+#define HOME_QSCLN RGUI_T(KC_SCLN)
+
 /* Defining Layers */
 enum custom_layers {
     _ALPHA = 0,
+    _QWERT,
     _NUMSYM,
     _NAVI,
     _ADJUST,
@@ -30,6 +42,7 @@ enum custom_layers {
 };
 
 #define TYPE DF(_ALPHA)
+#define QWER DF(_QWERT)
 #define NUMS LT(_NUMSYM, KC_ENT)
 #define NAVI LT(_NAVI, KC_TAB)
 #define ADJS LT(_ADJUST, )
@@ -50,6 +63,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         * |  a  |  r  |  s  |  t  |  g  |        |  m  |  n  |  e  |  i  |  o  |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
                         * |  z  |  x  |  c  |  d  |  v  |        |  k  |  h  |  ,  |  .  |  /  |
+                        * `-----------------------------|        |-----------------------------'
+                        *                   | ent |bkspc|        | spc | tab |
+                        *                   '-----------'        '-----------'
+                        */
+    [_QWERT] = LAYOUT(     KC_Q,    KC_W,    KC_E,    KC_R,    KC_B,   KC_J,   KC_L,    KC_U,      KC_Y,     KC_SCLN, 
+                           HOME_QA, HOME_QS, HOME_QD, HOME_QF, KC_G,   KC_M,   HOME_QJ, HOME_QK,   HOME_QL,  HOME_QSCLN, 
+                           KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,   KC_K,   KC_H,    KC_COMM,   KC_DOT,   KC_SLSH, 
+                                                      NUMS,  KC_BSPC,  KC_SPC, NAVI
+                ),
+                        /* QWERTY Layer
+                        *
+                        * ,-----------------------------.        ,-----------------------------.
+                        * |  q  |  w  |  e  |  r  |  t  |        |  y  |  u  |  i  |  o  |  p  |
+                        * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
+                        * |  a  |  s  |  d  |  f  |  g  |        |  h  |  j  |  k  |  l  |  ;  |
+                        * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
+                        * |  z  |  x  |  c  |  v  |  b  |        |  n  |  m  |  ,  |  .  |  /  |
                         * `-----------------------------|        |-----------------------------'
                         *                   | ent |bkspc|        | spc | tab |
                         *                   '-----------'        '-----------'
@@ -91,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ADJUST] = LAYOUT(    KC_BTN2,  KC_MS_U,  KC_BTN1,  KC_NO,  KC_NO,   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
                            KC_MS_L,  KC_MS_D,  KC_MS_R,  KC_NO,  KC_NO,   KC_WH_L,  KC_WH_D,  KC_WH_U,  KC_WH_R,  KC_NO,
-                           KC_NO,    KC_NO,    KC_NO,    TYPE,   GAME,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
+                           KC_NO,    KC_NO,    QWER,     TYPE,   GAME,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
                                                          NUMS,  KC_BSPC,  KC_SPC,   NAVI,
                         /* Adjust Layer (NUMS + NAV)
                         * 
@@ -100,7 +130,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
                         * | MsL | MsD | MsR | --- | --- |        |mWhlL|mWhlD|mWhlU|mWhlR| --- |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
-                        * | --- | --- | --- |ALPHA|GAMES|        | --- | --- | --- | --- | --- |
+                        * | --- | --- |QWERT|ALPHA|GAMES|        | --- | --- | --- | --- | --- |
                         * `-----------------------------|        |-----------------------------'
                         *                   |~NUM~|bkspc|        | spc |~NAV~|
                         *                   '-----------'        '-----------'
