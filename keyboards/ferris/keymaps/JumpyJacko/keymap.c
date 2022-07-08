@@ -9,7 +9,7 @@
  * Basically not even what it was like when it was generated.   
  */
 
-/* Defining Homerow Mods for Readability (COLEMAK DH) */
+/* Defining Homerow Mods for Readability (COLEMAK) */
 #define HOME_A LGUI_T(KC_A)
 #define HOME_R LALT_T(KC_R)
 #define HOME_S LSFT_T(KC_S)
@@ -50,19 +50,19 @@ enum custom_layers {
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_ALPHA] = LAYOUT(     KC_Q,   KC_W,   KC_F,   KC_P,   KC_B,   KC_J,   KC_L,   KC_U,     KC_Y,    KC_SCLN, 
-                           HOME_A, HOME_R, HOME_S, HOME_T, KC_G,   KC_M,   HOME_N, HOME_E,   HOME_I,  HOME_O, 
-                           KC_Z,   KC_X,   KC_C,   KC_D,   KC_V,   KC_K,   KC_H,   KC_COMM,  KC_DOT,  KC_SLSH, 
+    [_ALPHA] = LAYOUT(     KC_Q,   KC_W,   KC_F,   KC_P,   KC_G,   KC_J,   KC_L,   KC_U,     KC_Y,    KC_SCLN, 
+                           HOME_A, HOME_R, HOME_S, HOME_T, KC_H,   KC_H,   HOME_N, HOME_E,   HOME_I,  HOME_O, 
+                           KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_K,   KC_M,   KC_COMM,  KC_DOT,  KC_SLSH, 
                                                    NUMS, KC_BSPC,  KC_SPC, NAVI
                 ),
-                        /* Colemak-dh Layer
+                        /* Colemak Layer
                         *
                         * ,-----------------------------.        ,-----------------------------.
-                        * |  q  |  w  |  f  |  p  |  b  |        |  j  |  l  |  u  |  y  |  ;  |
+                        * |  q  |  w  |  f  |  p  |  g  |        |  j  |  l  |  u  |  y  |  ;  |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
-                        * |  a  |  r  |  s  |  t  |  g  |        |  m  |  n  |  e  |  i  |  o  |
+                        * |  a  |  r  |  s  |  t  |  d  |        |  h  |  n  |  e  |  i  |  o  |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
-                        * |  z  |  x  |  c  |  d  |  v  |        |  k  |  h  |  ,  |  .  |  /  |
+                        * |  z  |  x  |  c  |  v  |  b  |        |  k  |  m  |  ,  |  .  |  /  |
                         * `-----------------------------|        |-----------------------------'
                         *                   | ent |bkspc|        | spc | tab |
                         *                   '-----------'        '-----------'
