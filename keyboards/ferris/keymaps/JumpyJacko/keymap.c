@@ -41,12 +41,15 @@ enum custom_layers {
     _GAMING,
 };
 
+/* Switch between default layers */
 #define TYPE DF(_ALPHA)
 #define QWER DF(_QWERT)
+#define GAME DF(_GAMING)
+
+/* Layer keys */
 #define NUMS LT(_NUMSYM, KC_ENT)
 #define NAVI LT(_NAVI, KC_TAB)
 #define ADJS LT(_ADJUST, )
-#define GAME DF(_GAMING)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -101,9 +104,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         *                   |~NUM~|bkspc|        | spc | tab |
                         *                   '-----------'        '-----------'
                         */
-    [_NAVI] = LAYOUT(       KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_9,    KC_F10, 
+    [_NAVI] = LAYOUT(      KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_9,    KC_F10, 
                            KC_F11,  KC_VOLU, KC_VOLD, KC_MUTE, KC_NO,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_F12, 
-                           KC_MFFD, KC_MPLY, KC_MSTP, KC_MRWD, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+                           KC_MFFD, KC_MPLY, KC_MSTP, KC_MRWD, KC_NO,   KC_BSLS, KC_GRV,  KC_NO,   KC_NO,   KC_NO,
                                                       KC_ENT,  KC_BSPC, KC_SPC,  NAVI
         ),
                         /* Fn, Nav, and Media Layer
@@ -113,22 +116,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
                         * | F11 |VolUp|VolDn|Mute | --- |        |Left |Down | Up  |Right| F12 |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
-                        * |Medi>|MediP|MediS|Medi<| --- |        | --- | --- | --- | --- | --- |
+                        * |Medi>|MediP|MediS|Medi<| --- |        |  \  |  `  | --- | --- | --- |
                         * `-----------------------------|        |-----------------------------'
                         *                   | ent |bkspc|        | spc |~NAV~|
                         *                   '-----------'        '-----------'
                         */
 
-    [_ADJUST] = LAYOUT(    KC_BTN2,  KC_MS_U,  KC_BTN1,  KC_NO,  KC_NO,   KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
-                           KC_MS_L,  KC_MS_D,  KC_MS_R,  KC_NO,  KC_NO,   KC_WH_L,  KC_WH_D,  KC_WH_U,  KC_WH_R,  KC_NO,
-                           KC_NO,    KC_NO,    QWER,     TYPE,   GAME,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
-                                                         NUMS,  KC_BSPC,  KC_SPC,   NAVI,
+    [_ADJUST] = LAYOUT(    KC_NO,    KC_BTN2,  KC_MS_U,  KC_BTN1,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    NK_TOGG,
+                           KC_NO,    KC_MS_L,  KC_MS_D,  KC_MS_R,  KC_NO,    KC_WH_L,  KC_WH_D,  KC_WH_U,  KC_WH_R,  KC_NO,
+                           KC_NO,    KC_NO,    QWER,     TYPE,     GAME,     KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
+                                                         NUMS,     KC_BSPC,  KC_SPC,   NAVI,
                         /* Adjust Layer (NUMS + NAV)
                         * 
                         * ,-----------------------------.        ,-----------------------------.
-                        * |RClik| MsU |LClik| --- | --- |        | --- | --- | --- | --- | --- |
-                        * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
-                        * | MsL | MsD | MsR | --- | --- |        |mWhlL|mWhlD|mWhlU|mWhlR| --- |
+                        * | --- |RClik| MsU |LClik| --- |        | --- | --- | --- | --- |tNKRO|
+                        * |-----|-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
+                        * | --- | MsL | MsD | MsR | --- |        |mWhlL|mWhlD|mWhlU|mWhlR| --- |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
                         * | --- | --- |QWERT|ALPHA|GAMES|        | --- | --- | --- | --- | --- |
                         * `-----------------------------|        |-----------------------------'

@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID       0xC2AB
 #define PRODUCT_ID      0x3939
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    JacksonLY
+#define MANUFACTURER    DPB
 #define PRODUCT         Ferris sweep
 
 #define DIRECT_PINS { \
@@ -34,8 +34,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define DIRECT_PINS_RIGHT  { \
     { F4, F5, F6, F7, E6 }, \
-    { D3,B6,B2,B3,B1 }, \
-    { D7,C6,D4,D0,D1}, \
+    { D3, B6, B2, B3, B1 }, \
+    { D7, C6, D4, D0, D1 }, \
     { B5, B4, NO_PIN, NO_PIN, NO_PIN } \
 }
 
@@ -45,7 +45,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define UNUSED_PINS
 
 #define USE_SERIAL
-#define SOFT_SERIAL_PIN D2s
+#define SOFT_SERIAL_PIN D2
 
 
 // Set the mouse settings to a comfortable speed/accuracy trade-off,
@@ -71,8 +71,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_FORCE_HOLD
 
 // Extra Things
-#define NKRO_ENABLE
-#define FORCE_NKRO
+// #define NKRO_ENABLE oh how i wish i could have nkro
+// #define FORCE_NKRO
 
 #define COMBO_COUNT 4
 #define COMBO_ALLOW_ACTION_KEYS 
