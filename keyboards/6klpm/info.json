@@ -1,0 +1,20 @@
+{
+    "keyboard_name": "6klpm",
+    "url": "https://github.com/JumpyJacko/6_key_lp_macropad",
+    "maintainer": "@JumpyJacko",
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"x": 2, "y": 0},
+
+                {"x": 0, "y": 1},
+                {"x": 1, "y": 1},
+                {"x": 2, "y": 1},
+                
+                {"x": 0, "y": 2},
+                {"x": 1, "y": 2},
+                {"x": 2, "y": 2}
+            ]
+        }
+    }
+}
