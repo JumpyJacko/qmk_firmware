@@ -1,5 +1,5 @@
 # The 6 Key (+ Rotary Encoder) Low-Profile Macropad
-This is the firmware for the 6klpm. The hardware can be found at [it's repository](https://github.com/JumpyJacko/6_key_low_profile_macropad).
+This is the firmware for the 6klpm. The hardware can be found at [it's repository](https://github.com/JumpyJacko/6_key_lp_macropad).
 
 ## The Keymap
 ```
