@@ -42,7 +42,6 @@ enum custom_layers {
     _NUMSYM,
     _NAVI,
     _ADJUST,
-    _GAMING,
 
     /* ARTSEYIO Layers*/
     _A_BASE,
@@ -57,7 +56,6 @@ enum custom_layers {
 /* Switch between default layers */
 #define TYPE DF(_ALPHA)
 #define QWER DF(_QWERT)
-#define GAME DF(_GAMING)
 #define ARTS DF(_A_BASE)
 
 /* Layer keys */
@@ -71,9 +69,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            HOME_A, HOME_R, HOME_S, HOME_T, KC_H,   KC_H,   HOME_N, HOME_E,   HOME_I,  HOME_O, 
                            KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_K,   KC_M,   KC_COMM,  KC_DOT,  KC_SLSH, 
                                                    NUMS, KC_BSPC,  KC_SPC, NAVI
-                ),
+        ),
                         /* Colemak Layer
-                        *
                         * ,-----------------------------.        ,-----------------------------.
                         * |  q  |  w  |  f  |  p  |  g  |        |  j  |  l  |  u  |  y  |  ;  |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
@@ -88,9 +85,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            HOME_QA, HOME_QS, HOME_QD, HOME_QF, KC_G,   KC_M,   HOME_QJ, HOME_QK,   HOME_QL,  HOME_QSCLN, 
                            KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,   KC_K,   KC_H,    KC_COMM,   KC_DOT,   KC_SLSH, 
                                                       NUMS,  KC_BSPC,  KC_SPC, NAVI
-                ),
+        ),
                         /* QWERTY Layer
-                        *
                         * ,-----------------------------.        ,-----------------------------.
                         * |  q  |  w  |  e  |  r  |  t  |        |  y  |  u  |  i  |  o  |  p  |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
@@ -105,9 +101,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_DLR,  KC_PLUS, KC_LPRN, KC_RPRN, KC_AT,   KC_PIPE, KC_MINS, KC_EQL,  KC_UNDS, KC_ASTR, 
                            KC_EXLM, KC_HASH, KC_LCBR, KC_RCBR, KC_TILD, KC_AMPR, KC_LBRC, KC_RBRC, KC_PERC, KC_CIRC,
                                                       NUMS,   KC_BSPC, KC_SPC, KC_TAB
-                ),
+        ),
                         /* Numbers and Symbols Layer (Basically Stolen from winternebs)
-                        *
                         * ,-----------------------------.        ,-----------------------------.
                         * |  1  |  2  |  3  |  4  |  5  |        |  6  |  7  |  8  |  9  |  0  |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
@@ -124,7 +119,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                       KC_ENT,  KC_BSPC, KC_SPC,  NAVI
         ),
                         /* Fn, Nav, and Media Layer
-                        * 
                         * ,-----------------------------.        ,-----------------------------.
                         * | Fn1 | Fn2 | Fn3 | Fn4 | Fn5 |        | Fn6 | Fn7 | Fn8 | Fn9 | F10 |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
@@ -138,59 +132,128 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ADJUST] = LAYOUT(    KC_NO,    KC_BTN2,  KC_MS_U,  KC_BTN1,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    NK_TOGG,
                            KC_NO,    KC_MS_L,  KC_MS_D,  KC_MS_R,  KC_NO,    KC_WH_L,  KC_WH_D,  KC_WH_U,  KC_WH_R,  KC_NO,
-                           KC_NO,    ARTS,     QWER,     TYPE,     GAME,     KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
+                           KC_NO,    KC_NO,    ARTS,     QWER,     TYPE,     KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
                                                          NUMS,     KC_BSPC,  KC_SPC,   NAVI,
+        ),
                         /* Adjust Layer (NUMS + NAV)
-                        * 
                         * ,-----------------------------.        ,-----------------------------.
                         * | --- |RClik| MsU |LClik| --- |        | --- | --- | --- | --- |tNKRO|
                         * |-----|-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
                         * | --- | MsL | MsD | MsR | --- |        |mWhlL|mWhlD|mWhlU|mWhlR| --- |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
-                        * | --- |ARTSE|QWERT|ALPHA|GAMES|        | --- | --- | --- | --- | --- |
+                        * | --- | --- |ARTSE|QWERT|ALPHA|        | --- | --- | --- | --- | --- |
                         * `-----------------------------|        |-----------------------------'
                         *                   |~NUM~|bkspc|        | spc |~NAV~|
                         *                   '-----------'        '-----------'
                         */
-        ),
 
-    [_GAMING] = LAYOUT(    KC_ESC,  KC_Q,  KC_W,   KC_E,   KC_R,    KC_T,    KC_Y,   KC_U,   KC_I,   KC_O, 
-                           KC_LSFT, KC_A,  KC_S,   KC_D,   KC_F,    KC_G,    KC_H,   KC_J,   KC_K,   KC_L, 
-                           KC_LCTL, KC_Z,  KC_X,   KC_C,   KC_V,    KC_B,    KC_N,   KC_M,   KC_P,   KC_LALT, 
-                                                   KC_TAB, KC_SPC,  KC_BSPC, NAVI
+    [_A_BASE] = LAYOUT(    A_BASE_S, A_BASE_T, A_BASE_R, A_BASE_A,  KC_NO,    KC_NO,  A_BASE_A,   A_BASE_R,   A_BASE_T,  A_BASE_S,
+                           A_BASE_O, A_BASE_I, A_BASE_Y, A_BASE_E,  KC_NO,    KC_NO,  A_BASE_E,   A_BASE_Y,   A_BASE_I,  A_BASE_O, 
+                           KC_NO,    KC_NO,    KC_NO,    KC_NO,     KC_NO,    KC_NO,  KC_NO,      KC_NO,      KC_NO,     KC_NO, 
+                                                         TYPE,      KC_SPC,   KC_SPC, TYPE
         ),
-                        /* Gaming Layer
+                        /* Artsey Base Layer
                         *
                         * ,-----------------------------.        ,-----------------------------.
-                        * | Esc |  q  |  w  |  e  |  r  |        |  t  |  y  |  i  |  u  |  o  |
+                        * |  s  |  t  |  r  |  a  | --- |        | --- |  a  |  r  |  t  |  s  |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
-                        * |Shift|  a  |  s  |  d  |  f  |        |  g  |  h  |  j  |  k  |  l  |
+                        * |  o  |  i  |  y  |  e  | --- |        | --- |  e  |  y  |  i  |  o  |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
-                        * |LCtrl|  z  |  x  |  c  |  v  |        |  b  |  n  |  m  |  p  |LfAlt|
+                        * | --- | --- | --- | --- | --- |        | --- | --- | --- | --- | --- |
                         * `-----------------------------|        |-----------------------------'
-                        *                   | tab | spc |        |bkspc| ent |
+                        *                   |ALPHA| spc |        | spc |ALPHA|
                         *                   '-----------'        '-----------'
                         */
-    [_A_BASE] = LAYOUT(A_BASE_S, A_BASE_T, A_BASE_R, A_BASE_A,
-                       A_BASE_O, A_BASE_I, A_BASE_Y, A_BASE_E),
 
-    [_A_NUM] = LAYOUT(A_NUM_S, A_NUM_T, A_NUM_R, A_NUM_A,
-                      A_NUM_O, A_NUM_I, A_NUM_Y, A_NUM_E),
+    [_A_NUM] = LAYOUT(     A_NUM_S,  A_NUM_T,  A_NUM_R,  A_NUM_A,  KC_NO,    KC_NO,  A_NUM_A,   A_NUM_R,   A_NUM_T,  A_NUM_S,
+                           A_NUM_O,  A_NUM_I,  A_NUM_Y,  A_NUM_E,  KC_NO,    KC_NO,  A_NUM_E,   A_NUM_Y,   A_NUM_I,  A_NUM_O, 
+                           KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,     KC_NO,      KC_NO,    KC_NO, 
+                                                         TYPE,     KC_SPC,   KC_SPC, TYPE
+        ),
+                        /* Artsey NUM Layer
+                        *
+                        * ,-----------------------------.        ,-----------------------------.
+                        * | ~ ~ |  3 |8| 2 |7| 1  | --- |        | - - |  1 |7| 2 |8| 3  | ~~~ |
+                        * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
+                        * | --- |  6 |0| 5 |9| 4  | --- |        | --- |  4 |0| 5 |0| 6  | --- |
+                        * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
+                        * | --- | --- | --- | --- | --- |        | --- | --- | --- | --- | --- |
+                        * `-----------------------------|        |-----------------------------'
+                        *                   |ALPHA| spc |        | spc |ALPHA|
+                        *                   '-----------'        '-----------'
+                        */
 
-    [_A_NAV] = LAYOUT(A_NAV_S, A_NAV_T, A_NAV_R, A_NAV_A,
-                      A_NAV_O, A_NAV_I, A_NAV_Y, A_NAV_E),
+    [_A_NAV] = LAYOUT(     A_NAV_S,  A_NAV_T,  A_NAV_R,  A_NAV_A,  KC_NO,    KC_NO,  A_NAV_A,   A_NAV_R,   A_NAV_T,  A_NAV_S,
+                           A_NAV_O,  A_NAV_I,  A_NAV_Y,  A_NAV_E,  KC_NO,    KC_NO,  A_NAV_E,   A_NAV_Y,   A_NAV_I,  A_NAV_O, 
+                           KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,     KC_NO,      KC_NO,    KC_NO, 
+                                                         TYPE,     KC_SPC,   KC_SPC, TYPE
+        ),
+                        /* Artsey NAV Layer
+                        * I don't know the layout lol 
+                        */
 
-    [_A_SYM] = LAYOUT(A_SYM_S, A_SYM_T, A_SYM_R, A_SYM_A,
-                      A_SYM_O, A_SYM_I, A_SYM_Y, A_SYM_E),
+    [_A_SYM] = LAYOUT(     A_SYM_S,  A_SYM_T,  A_SYM_R,  A_SYM_A,  KC_NO,    KC_NO,  A_SYM_A,   A_SYM_R,   A_SYM_T,  A_SYM_S,
+                           A_SYM_O,  A_SYM_I,  A_SYM_Y,  A_SYM_E,  KC_NO,    KC_NO,  A_SYM_E,   A_SYM_Y,   A_SYM_I,  A_SYM_O, 
+                           KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,     KC_NO,     KC_NO,    KC_NO, 
+                                                         TYPE,     KC_SPC,   KC_SPC, TYPE
+        ),
+                        /* Artsey SYM Layer
+                        *
+                        * ,-----------------------------.        ,-----------------------------.
+                        * |  `  |  ;  |  \  |  !  | --- |        | --- |  !  |  \  |  ;  |  `  |
+                        * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
+                        * |  =  |  -  |  ?  | ~ ~ | --- |        | --- | ~ ~ |  ?  |  -  |  =  |
+                        * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
+                        * | --- | --- | --- | --- | --- |        | --- | --- | --- | --- | --- |
+                        * `-----------------------------|        |-----------------------------'
+                        *                   |ALPHA| spc |        | spc |ALPHA|
+                        *                   '-----------'        '-----------'
+                        */
 
-    [_A_BRAC] = LAYOUT(A_BRAC_S, A_BRAC_T, A_BRAC_R, A_BRAC_A,
-                       A_BRAC_O, A_BRAC_I, A_BRAC_Y, A_BRAC_E),
+    [_A_BRAC] = LAYOUT(    A_BRAC_S, A_BRAC_T, A_BRAC_R, A_BRAC_A, KC_NO,    KC_NO,  A_BRAC_A,  A_BRAC_R,  A_BRAC_T, A_BRAC_S,
+                           A_BRAC_O, A_BRAC_I, A_BRAC_Y, A_BRAC_E, KC_NO,    KC_NO,  A_BRAC_E,  A_BRAC_Y,  A_BRAC_I, A_BRAC_O, 
+                           KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,     KC_NO,     KC_NO,    KC_NO, 
+                                                         TYPE,     KC_SPC,   KC_SPC, TYPE
+        ),
+                        /* Artsey BRAC Layer
+                        *
+                        * ,-----------------------------.        ,-----------------------------.
+                        * |  }  |  (  |  )  | ~ ~ | --- |        | --- | ~ ~ |  (  |  )  |  {  |
+                        * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
+                        * |  {  |  [  |  ]  | --- | --- |        | --- | --- |  [  |  ]  |  }  |
+                        * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
+                        * | --- | --- | --- | --- | --- |        | --- | --- | --- | --- | --- |
+                        * `-----------------------------|        |-----------------------------'
+                        *                   |ALPHA| spc |        | spc |ALPHA|
+                        *                   '-----------'        '-----------'
+                        */
 
-    [_A_MOU] = LAYOUT(A_MOU_S, A_MOU_T, A_MOU_R, A_MOU_A,
-                      A_MOU_I, A_MOU_Y, A_MOU_E),
+    [_A_MOU] = LAYOUT(     A_MOU_S,  A_MOU_T,  A_MOU_R,  A_MOU_A,  KC_NO,    KC_NO,  A_MOU_A,   A_MOU_R,   A_MOU_T,  A_MOU_S,
+                           A_MOU_O,  A_MOU_I,  A_MOU_Y,  A_MOU_E,  KC_NO,    KC_NO,  A_MOU_E,   A_MOU_Y,   A_MOU_I,  A_MOU_O, 
+                           KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,  KC_NO,     KC_NO,     KC_NO,    KC_NO, 
+                                                         TYPE,     KC_SPC,   KC_SPC, TYPE
+        ),
+                        /* Artsey MOU Layer
+                        * I also don't know this layout
+                        */
 
-    [_A_CUSTOM] = LAYOUT(A_CUSTOM_S, A_CUSTOM_T, A_CUSTOM_R, A_CUSTOM_A,
-                         A_CUSTOM_O, A_CUSTOM_I, A_CUSTOM_Y, A_CUSTOM_E),
+    [_A_CUSTOM] = LAYOUT(  A_CUSTOM_S,  A_CUSTOM_T,  A_CUSTOM_R,  A_CUSTOM_A,  KC_NO,  KC_NO,  A_CUSTOM_A,  A_CUSTOM_R,   A_CUSTOM_T,  A_CUSTOM_S,
+                           A_CUSTOM_O,  A_CUSTOM_I,  A_CUSTOM_Y,  A_CUSTOM_E,  KC_NO,  KC_NO,  A_CUSTOM_E,  A_CUSTOM_Y,   A_CUSTOM_I,  A_CUSTOM_O, 
+                           KC_NO,       KC_NO,       KC_NO,       KC_NO,       KC_NO,  KC_NO,  KC_NO,       KC_NO,        KC_NO,       KC_NO, 
+                                                                  TYPE,        KC_SPC, KC_SPC, TYPE
+        ),
+                        /* Artsey Custom Layer
+                        *
+                        * ,-----------------------------.        ,-----------------------------.
+                        * |ALPHA|VolUp| Ins |Mute | --- |        | --- | Mute|  \  |VolUp|ALPHA|
+                        * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
+                        * | ~ ~ |VolDn|PrtSc|RShif| --- |        | --- |RShif|PrtSc|VolDn| ~ ~|
+                        * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
+                        * | --- | --- | --- | --- | --- |        | --- | --- | --- | --- | --- |
+                        * `-----------------------------|        |-----------------------------'
+                        *                   |ALPHA| spc |        | spc |ALPHA|
+                        *                   '-----------'        '-----------'
+                        */
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -203,8 +266,8 @@ enum combos {
   SPC_HOME_O_QUOTE,     // Space + O = ' and "
   SPC_SLSH_BSLS,        // Space + / = "\"
   SPC_SCLN_DEL,         // Space + ; = Delete
-  ZC_COPY,              // Z + C = Control + C (Copy),  Stolen from QMK Combo Docs
-  XV_PASTE              // X + V = Control + V (Paste), Stolen from QMK Combo Docs
+  ZC_COPY,              // Z + C = Control + C (Copy),  Yoinked from QMK Combo Docs
+  XV_PASTE              // X + V = Control + V (Paste), Yoinked from QMK Combo Docs
 };
 
 const uint16_t PROGMEM bspc_spc_esc[] = { KC_BSPC, KC_SPC, COMBO_END};
