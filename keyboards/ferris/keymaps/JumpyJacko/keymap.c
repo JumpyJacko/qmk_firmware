@@ -153,7 +153,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                          TYPE,      KC_SPC,   KC_SPC, TYPE
         ),
                         /* Artsey Base Layer
-                        *
                         * ,-----------------------------.        ,-----------------------------.
                         * |  s  |  t  |  r  |  a  | --- |        | --- |  a  |  r  |  t  |  s  |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
@@ -171,7 +170,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                          TYPE,     KC_SPC,   KC_SPC, TYPE
         ),
                         /* Artsey NUM Layer
-                        *
                         * ,-----------------------------.        ,-----------------------------.
                         * | ~ ~ |  3 |8| 2 |7| 1  | --- |        | - - |  1 |7| 2 |8| 3  | ~~~ |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
@@ -198,7 +196,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                          TYPE,     KC_SPC,   KC_SPC, TYPE
         ),
                         /* Artsey SYM Layer
-                        *
                         * ,-----------------------------.        ,-----------------------------.
                         * |  `  |  ;  |  \  |  !  | --- |        | --- |  !  |  \  |  ;  |  `  |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
@@ -216,7 +213,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                          TYPE,     KC_SPC,   KC_SPC, TYPE
         ),
                         /* Artsey BRAC Layer
-                        *
                         * ,-----------------------------.        ,-----------------------------.
                         * |  }  |  (  |  )  | ~ ~ | --- |        | --- | ~ ~ |  (  |  )  |  {  |
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|
@@ -243,7 +239,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                   TYPE,        KC_SPC, KC_SPC, TYPE
         ),
                         /* Artsey Custom Layer
-                        *
                         * ,-----------------------------.        ,-----------------------------.
                         * |ALPHA|VolUp| Ins |Mute | --- |        | --- | Mute|  \  |VolUp|ALPHA|
                         * |-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----|

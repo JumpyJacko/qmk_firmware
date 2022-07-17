@@ -65,7 +65,7 @@ Fn, Nav, and Media Layer
 ### Combos
 - Backspace + Space = Escape
 - Space + O = ' and "
-- Space + / = "\"
+- Space + / = \
 - Space + ; = Delete
 - Z + C = Control + C (Copy),  Yoinked from QMK Combo Docs
 - X + V = Control + V (Paste), Yoinked from QMK Combo Docs
