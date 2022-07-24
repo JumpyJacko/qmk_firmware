@@ -35,23 +35,7 @@
 #define HOME_QL    RALT_T(KC_L)
 #define HOME_QSCLN RGUI_T(KC_SCLN)
 
-/* Defining Layers */
-enum custom_layers {
-    _ALPHA = 0,
-    _QWERT,
-    _NUMSYM,
-    _NAVI,
-    _ADJUST,
-
-    /* ARTSEYIO Layers*/
-    _A_BASE,
-    _A_NUM,
-    _A_NAV,
-    _A_SYM,
-    _A_BRAC,
-    _A_MOU,
-    _A_CUSTOM,
-};
+/* Defining Layers - Now in artsey.h*/
 
 /* Switch between default layers */
 #define TYPE DF(_ALPHA)
@@ -131,7 +115,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ADJUST] = LAYOUT(    KC_NO,    KC_BTN2,  KC_MS_U,  KC_BTN1,  KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,    NK_TOGG,
                            KC_NO,    KC_MS_L,  KC_MS_D,  KC_MS_R,  KC_NO,    KC_WH_L,  KC_WH_D,  KC_WH_U,  KC_WH_R,  KC_NO,
                            KC_NO,    KC_NO,    ARTS,     QWER,     TYPE,     KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,
-                                                         NUMS,     KC_BSPC,  KC_SPC,   NAVI,
+                                                         NUMS,     KC_BSPC,  KC_SPC,   NAVI
         ),
                         /* Adjust Layer (NUMS + NAV)
                         * ,-----------------------------.        ,-----------------------------.
@@ -251,45 +235,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _NUMSYM, _NAVI, _ADJUST);
-}
-
-/* Combo Definitions */
-enum combos { 
-  BSPC_SPC_ESC,         // Backspace + Space = Escape
-  SPC_HOME_O_QUOTE,     // Space + O = ' and "
-  SPC_SLSH_BSLS,        // Space + / = "\"
-  SPC_SCLN_DEL,         // Space + ; = Delete
-  ZC_COPY,              // Z + C = Control + C (Copy),  Yoinked from QMK Combo Docs
-  XV_PASTE              // X + V = Control + V (Paste), Yoinked from QMK Combo Docs
-};
-
-const uint16_t PROGMEM bspc_spc_esc[] = { KC_BSPC, KC_SPC, COMBO_END};
-const uint16_t PROGMEM spc_home_o_quote[] = { KC_SPC, HOME_O, COMBO_END};
-const uint16_t PROGMEM spc_slsh_bsls[] = { KC_SPC, KC_SLSH, COMBO_END};
-const uint16_t PROGMEM spc_scln_del[] = { KC_SPC, KC_SCLN, COMBO_END};
-const uint16_t PROGMEM copy_combo[] = {KC_Z, KC_C, COMBO_END};
-const uint16_t PROGMEM paste_combo[] = {KC_X, KC_V, COMBO_END};
-
-combo_t key_combos[COMBO_COUNT] = {
-  [BSPC_SPC_ESC] = COMBO(bspc_spc_esc, KC_ESC),
-  [SPC_HOME_O_QUOTE] = COMBO(spc_home_o_quote, KC_QUOTE),
-  [SPC_SLSH_BSLS] = COMBO(spc_slsh_bsls, KC_BSLS),
-  [SPC_SCLN_DEL] = COMBO(spc_scln_del, KC_DEL),
-  [ZC_COPY] = COMBO_ACTION(copy_combo),
-  [XV_PASTE] = COMBO_ACTION(paste_combo),
-};
-
-void process_combo_event(uint16_t combo_index, bool pressed) {
-  switch(combo_index) {
-    case ZC_COPY:
-      if (pressed) {
-        tap_code16(LCTL(KC_C));
-      }
-      break;
-    case XV_PASTE:
-      if (pressed) {
-        tap_code16(LCTL(KC_V));
-      }
-      break;
-  }
 }

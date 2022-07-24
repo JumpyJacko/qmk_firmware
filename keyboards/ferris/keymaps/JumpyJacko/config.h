@@ -80,7 +80,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define NKRO_ENABLE oh how i wish i could have nkro
 // #define FORCE_NKRO
 
-#define COMBO_COUNT 6
 #define COMBO_ALLOW_ACTION_KEYS 
 #define COMBO_VARIABLE_LEN
 #define COMBO_PERMISSIVE_HOLD
