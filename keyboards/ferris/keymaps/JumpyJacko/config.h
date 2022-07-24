@@ -64,6 +64,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // The default is 40
 #define MOUSEKEY_WHEEL_TIME_TO_MAX 100
 
+// EEPROM Handedness
+// make commands:
+// make ferris/sweep:JumpyJacko/avrdude-split-left
+// make ferris/sweep:JumpyJacko/avrdude-split-right
+#define EE_HANDS
+
 // Pick good defaults for enabling homerow modifiers
 #define TAPPING_TERM 170
 #define PERMISSIVE_HOLD
@@ -74,7 +80,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define NKRO_ENABLE oh how i wish i could have nkro
 // #define FORCE_NKRO
 
-#define COMBO_COUNT 4
+#define COMBO_COUNT 6
 #define COMBO_ALLOW_ACTION_KEYS 
 #define COMBO_VARIABLE_LEN
 #define COMBO_PERMISSIVE_HOLD
