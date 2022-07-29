@@ -19,10 +19,10 @@
 #define HOME_S LSFT_T(KC_S)
 #define HOME_T LCTL_T(KC_T)
 
-#define HOME_N RCTL_T(KC_N)
-#define HOME_E RSFT_T(KC_E)
-#define HOME_I RALT_T(KC_I)
-#define HOME_O RGUI_T(KC_O)
+#define HOME_N LCTL_T(KC_N)
+#define HOME_E LSFT_T(KC_E)
+#define HOME_I LALT_T(KC_I)
+#define HOME_O LGUI_T(KC_O)
 
 /* Defining Homerow Mods for Readability (QWERTY) */
 #define HOME_QA    LGUI_T(KC_A)
@@ -30,10 +30,10 @@
 #define HOME_QD    LSFT_T(KC_D)
 #define HOME_QF    LCTL_T(KC_F)
 
-#define HOME_QJ    RCTL_T(KC_J)
-#define HOME_QK    RSFT_T(KC_K)
-#define HOME_QL    RALT_T(KC_L)
-#define HOME_QSCLN RGUI_T(KC_SCLN)
+#define HOME_QJ    LCTL_T(KC_J)
+#define HOME_QK    LSFT_T(KC_K)
+#define HOME_QL    LALT_T(KC_L)
+#define HOME_QSCLN LGUI_T(KC_SCLN)
 
 /* Defining Layers - Now in artsey.h*/
 
