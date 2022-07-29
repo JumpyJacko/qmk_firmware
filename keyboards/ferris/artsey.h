@@ -2,8 +2,8 @@
 #include "quantum.h"
 
 enum layers {
-  _ALPHA = 0,
-  _QWERT,
+  _ALPHA,
+  _QWERT = 0,
   _NUMSYM,
   _NAVI,
   _ADJUST,
