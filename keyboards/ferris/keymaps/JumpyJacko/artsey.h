@@ -2,8 +2,8 @@
 #include "quantum.h"
 
 enum layers {
-  _ALPHA,
-  _QWERT = 0,
+  _COLEMAK,
+  _QWERTY = 0,
   _NUMSYM,
   _NAVI,
   _ADJUST,
@@ -187,7 +187,7 @@ A_MOU_O = KC_PGDN,
 A_CUSTOM_A = KC__MUTE,
 A_CUSTOM_R = KC_INS,
 A_CUSTOM_T = KC__VOLUP,
-A_CUSTOM_S,
+A_CUSTOM_S = QWER,
 A_CUSTOM_E = KC_RSFT,
 A_CUSTOM_Y = KC_PSCR,
 A_CUSTOM_I = KC__VOLDOWN,
