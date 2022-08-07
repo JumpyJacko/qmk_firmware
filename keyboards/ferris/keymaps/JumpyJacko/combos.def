@@ -1,7 +1,6 @@
 #include "artsey_basic.def"
 
 COMB(bspc_spc_esc,          KC_ESC,         KC_BSPC, KC_SPC)
-COMB(spc_home_o_quote,      KC_QUOT,        KC_SPC,  KC_O)
-COMB(spc_home_scln_quote,   KC_QUOT,        KC_SPC,  KC_SCLN)
+COMB(spc_home_o_quote,      KC_QUOTE,        KC_SPC,  KC_O)
+COMB(spc_home_scln_quote,   KC_QUOTE,        KC_SPC,  KC_SCLN)
 COMB(spc_slsh_bsls,         KC_BSLS,        KC_SPC,  KC_SLSH)
-COMB(spc_scln_del,          KC_DEL,         KC_SPC,  KC_SCLN)
